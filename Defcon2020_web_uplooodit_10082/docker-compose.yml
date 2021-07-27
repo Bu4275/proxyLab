@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: defcon2020_uploooodit
+    container_name: defcon2020_uploooodit
+    build: .
+    restart: always
+    ports:
+      - "10082:8888"
+    volumes:
+      - ./src:/app:ro
+  

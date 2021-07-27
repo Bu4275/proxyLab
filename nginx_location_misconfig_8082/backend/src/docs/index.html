@@ -1,0 +1,12 @@
+    
+Try to access http://backend:8080/admin/flag </br>
+<pre>
+# default.conf
+    location = / {
+        return 301 /docs/;
+    }
+
+    location /docs {
+        proxy_pass      http://backend:8080/docs/;
+    }
+</pre>

@@ -1,0 +1,15 @@
+FROM httpd:2.4.48
+
+RUN apt-get update
+
+RUN apt-get install php7.3 -y
+
+RUN apt-get install libapache2-mod-php7.3 -y
+
+COPY ./src /usr/local/apache2/htdocs 
+
+COPY ./conf/httpd.conf /usr/local/apache2/conf/httpd.conf
+
+COPY ./conf/php.conf /usr/local/apache2/conf/php.conf
+
+RUN ln -s /usr/lib/apache2/modules/libphp7.3.so /usr/local/apache2/modules/libphp7.so

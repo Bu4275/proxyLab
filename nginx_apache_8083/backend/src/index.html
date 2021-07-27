@@ -1,0 +1,13 @@
+Try to access /admin/flag </br>
+
+<pre>
+# nginx default.conf
+   location /admin/ {
+        deny all;
+        return 403;
+    }
+
+    location / {
+        proxy_pass	http://backend;
+    }
+</pre>

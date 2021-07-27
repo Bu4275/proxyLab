@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: httpd-php
+    container_name: http-php
+    build: .
+    restart: always
+    ports:
+      - "9096:80"
+    volumes:
+      - ./conf/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro
+      - ./conf/php.conf:/usr/local/apache2/conf/php.conf:ro
+      - ./src:/usr/local/apache2/htdocs:ro

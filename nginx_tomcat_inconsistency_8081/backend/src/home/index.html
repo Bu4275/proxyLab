@@ -1,0 +1,18 @@
+Try to access /admin/flag </br>
+
+<pre>
+# nginx default.conf
+    location / {
+	    proxy_pass	http://backend:8080/home/;
+    }
+
+    location ^~ /admin/ {
+        deny all;
+        return 403;
+    }
+
+    location ~* /console/ {
+        deny all;
+        return 403;
+    }
+</pre>

@@ -1,0 +1,9 @@
+FROM tomcat
+
+RUN mkdir -p /usr/local/tomcat/webapps/ROOT/admin
+
+ADD ./src /usr/local/tomcat/webapps/ROOT
+
+EXPOSE 80
+
+CMD ["catalina.sh", "run"]

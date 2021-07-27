@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    image: apache_gunicorn_lagacy
+    container_name: apache_rewrite_vul
+    build: .
+    restart: always
+    ports:
+      - "8085:80"
+    volumes:
+      - ./src:/app:ro
+      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf:ro

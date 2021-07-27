@@ -1,0 +1,15 @@
+FROM ubuntu
+
+WORKDIR /app
+
+ADD ./src /app
+
+RUN apt-get update
+
+RUN apt-get install python3 python3-pip -y
+
+RUN pip install -r requirements.txt
+
+EXPOSE 3000
+
+CMD gunicorn --keep-alive 10 -k gevent --bind 0.0.0.0:80 -w 20 wsgi:app

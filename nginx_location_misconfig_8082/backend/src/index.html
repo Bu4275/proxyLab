@@ -1,0 +1,12 @@
+Try to access /admin/flag </br>
+
+<pre>
+# nginx default.conf
+    location = / {
+        return 301 $scheme://$http_host/docs;
+    }
+
+    location /docs {
+        proxy_pass	http://backend:8080/docs/;
+    }
+</pre>

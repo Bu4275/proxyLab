@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:1.21.1
+    container_name: nginxtest
+    restart: always
+    ports:
+      - "9090:80"
+    volumes:
+      - ./src:/usr/share/nginx/html:ro

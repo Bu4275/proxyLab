@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: httpd:2.4.38
+    container_name: apache_rewrite_misconfig_frontend
+    restart: always
+    ports:
+      - "8084:80"
+    volumes:
+      - ./frontend/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro
+
+  backend_web:
+    image: ubuntu_gunicorn
+    container_name: apache_rewrite_misconfig_backend_web
+    build:
+      context: ./backend_web
+    restart: always
+    volumes:
+      - ./backend_web/src:/app:ro
+
+  backend_res:
+    image: ubuntu_python3_web
+    container_name: apache_rewrite_misconfig_backend_res
+    build:
+      context: ./backend_res
+    restart: always
+    volumes:
+      - ./backend_res/www:/www:ro

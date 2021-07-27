@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    image: apache_gunicorn
+    container_name: apache_unset_forwarded_ip2
+    build: .
+    restart: always
+    ports:
+      - "8089:80"
+    volumes:
+      - ./src:/app:ro
+      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf:ro

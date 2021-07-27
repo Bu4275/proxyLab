@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: labhaproxy_gunicorn
+    container_name: labhaproxy_gunicorn
+    build: .
+    restart: always
+    ports:
+      - "10081:80"
+    volumes:
+      - ./src:/app:ro
+  

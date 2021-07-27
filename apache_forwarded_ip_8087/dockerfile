@@ -1,0 +1,17 @@
+FROM httpd:2.4.48
+
+WORKDIR /app
+
+ADD ./src /app
+
+RUN apt-get update
+
+RUN apt-get install python3 python3-pip -y
+
+RUN pip3 install flask gunicorn
+
+RUN touch /usr/local/apache2/logs/access_log
+
+EXPOSE 80
+
+CMD /usr/local/apache2/bin/httpd -k start && cd /app/ && gunicorn --bind=127.0.0.1:3000 wsgi:app --access-logfile '-' & tail -f /usr/local/apache2/logs/access_log

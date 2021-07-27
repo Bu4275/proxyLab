@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: labats7
+    build: 
+      context: ./frontend
+    ports:
+      - "10080:8080"
+    volumes:
+      - ./remap.conf:/etc/trafficserver/remap.config:ro
+  
+  backend:
+    image: labats7-gunicorn-backend
+    build:
+      context: ./backend
+

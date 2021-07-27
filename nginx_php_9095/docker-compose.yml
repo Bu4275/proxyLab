@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx-php-test
+    container_name: nginx-php-test
+    build: .
+    restart: always
+    ports:
+      - "9095:80"
+    volumes:
+      - ./conf/www.conf:/etc/php/7.3/fpm/pool.d/www.conf:ro
+      - ./conf/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./src:/usr/share/nginx/html:ro

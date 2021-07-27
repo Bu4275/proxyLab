@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    image: apache_gunicorn
+    container_name: apache_misconfig_ssrf
+    build: .
+    restart: always
+    ports:
+      - "8086:80"
+    volumes:
+      - ./src:/app:ro
+      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf:ro
