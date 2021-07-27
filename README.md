@@ -1,7 +1,8 @@
 ### proxyLab
 
-Build docker images for reverse proxy testing
+Build docker images for Reverse Proxy testing
 
 ### Reference
 https://github.com/GrrrDog/weird_proxies
+
 https://github.com/ZeddYu/HTTP-Smuggling-Lab
