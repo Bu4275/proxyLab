@@ -13,8 +13,6 @@ services:
   backend:
     image: tomcat
     container_name: nginx_tomcat_inconsistency_backend
-    build:
-      context: ./backend
     restart: always
     volumes:
       - ./backend/src:/usr/local/tomcat/webapps/ROOT:ro
