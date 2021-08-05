@@ -14,6 +14,7 @@ HAProxy < 2.0.6 + Flask with Gunicorn
 ### Usage
 Run
 ```
+$ chmod +x src/haproxy src/start.sh
 $ docker-compose up
 ````
 Go http://127.0.0.1:10082

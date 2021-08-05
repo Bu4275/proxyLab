@@ -17,6 +17,7 @@ Threr are three flags
 
 Run 
 ``` bash
+chmod +x src/haproxy
 docker-compose up
 ```
 
