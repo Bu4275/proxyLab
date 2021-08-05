@@ -30,9 +30,6 @@ def flag():
     if 'x-forwarded-for' in request.headers:
             src_ip = request.headers['x-forwarded-for']
 
-    if src_ip is None:
-        src_ip = request.remote_addr
-
     if src_ip == '127.0.0.1':
         return open('flag','r').read()
     else:
